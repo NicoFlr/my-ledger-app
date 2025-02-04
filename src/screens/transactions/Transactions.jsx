@@ -7,7 +7,7 @@ import { getStringItem } from '../../services/phone-storage-service';
 import {jwtDecode} from 'jwt-decode';
 import {PhoneStorage} from '../../constants/phoneStorageConstants.js';
 import TransactionModal from '../../components/transaction-modal/TransactionModal.jsx';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { format, parseISO } from 'date-fns';
 
 export default function Transactions({navigation}) {
   const [currentUserId, setCurrentUserId] = useState('');
@@ -25,7 +25,6 @@ export default function Transactions({navigation}) {
           return;
         }
         let decodedToken = jwtDecode(storedToken);
-        console.log(decodedToken);
         const response = await getUser(decodedToken.userId);
         setTransactions(response.data.transactions);
         setCurrentUserId(decodedToken.userId);
@@ -63,7 +62,7 @@ export default function Transactions({navigation}) {
             <Card style={styles.card}>
               <Card.Content>
                 <Text style={styles.text}>
-                  {item.isBill ? '-' : ''}{item.money} Bs. - {item.dateTime} - {item.category.name}
+                  {item.isBill ? '-' : ''}{item.money} Bs. - {format(parseISO(item.dateTime), 'MM/dd/yyyy')} - {item.category.name}
                 </Text>
               </Card.Content>
             </Card>

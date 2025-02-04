@@ -1,1 +1,1 @@
-export const API_BASE_URL = 'http://10.0.2.2:5001/api' //'https://my-ledger-api.azurewebsites.net/api';
+export const API_BASE_URL = 'https://my-ledger-api.azurewebsites.net/api';
