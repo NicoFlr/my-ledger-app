@@ -35,15 +35,6 @@ npm run android
 yarn android
 ```
 
-Alternatively, having Android studio open, you can use the following command to start metro, the emulator, and run your app in one go:
-```sh
-npx react-native run-android
-```
-Or
-```sh
-npx react-native run-ios
-```
-
 ### iOS
 
 Remember you can mainly build and run the iOS version on devices running iOS
@@ -70,6 +61,15 @@ npm run ios
 
 # OR using Yarn
 yarn ios
+```
+
+Alternatively, having Android studio open, you can use the following command to start metro, the emulator, and run your app in one go:
+```sh
+npx react-native run-android
+```
+Or
+```sh
+npx react-native run-ios
 ```
 
 If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
